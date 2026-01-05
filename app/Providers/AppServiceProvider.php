@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-echo ('vào ApppserviceProvider.php -> ');
 
 class AppServiceProvider extends ServiceProvider
 {
