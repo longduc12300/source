@@ -1,5 +1,4 @@
 <?php
-echo ('vào index.php -> ');
 
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
