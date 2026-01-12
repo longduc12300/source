@@ -1,5 +1,4 @@
 <?php
-echo ('vào config/app.php trước rồi load hết từng file config -> ');
 
 return [
 

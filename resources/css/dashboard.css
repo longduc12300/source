@@ -1,0 +1,25 @@
+body {
+    background-color: #f4f6f9;
+}
+.navbar {
+    background: #FFC0CB !important;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+}
+.navbar a:hover,
+.navbar a.active {
+    background: #FFB6C1;
+    color: #fff;
+}
+.card-stat {
+    border-left: 5px solid;
+}
+
+.border-primary { border-color: #FFC0CB !important; }
+.border-success { border-color: #FFC0CB !important; }
+.border-warning { border-color: #FFC0CB !important; }
+.border-danger { border-color: #FFC0CB !important; }

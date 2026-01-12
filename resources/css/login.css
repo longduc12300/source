@@ -1,0 +1,9 @@
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #9efdc6 0%,
+        #c2f1f7 50%,
+        #9efdc6 100%
+    );
+}
