@@ -22,7 +22,7 @@
         <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                    {{ Auth::user()->name ?? 'Admin' }}
+                    {{ Auth::user()->name ?? 'Log in' }}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item text-dark" href="#">Profile</a></li>
