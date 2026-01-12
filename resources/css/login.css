@@ -56,11 +56,6 @@
     color: #fff;
 }
 
-.form-check-input:checked {
-    background-color: purple;
-    border-color: #0d6dfd00;
-}
-
 @supports not (backdrop-filter: blur(5px)) {
     .glass-card {
         background: rgba(88, 28, 135, 0.85);
