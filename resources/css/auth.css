@@ -21,13 +21,9 @@
     background: rgba(255, 255, 255, 0);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px); 
-    
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.486);
-
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.25);
-
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     color: #fff;
 }
 
@@ -41,7 +37,7 @@
     background: rgba(255, 255, 255, 0.2);
     border-color: #c715a0;
     box-shadow: none;
-}
+}l
 
 .glass-card .form-label {
     color: rgba(255,255,255,0.9);
