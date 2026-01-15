@@ -1,25 +1,55 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body class="login-page">
+
+<div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="card glass-card" style="width: 420px;">
+        <div class="card-body p-4">
+
+            {{-- Logo --}}
+            <div class="text-center mb-3">
+                <img src="{{ asset('images/fuxuan.png') }}" alt="logo" style="height: 80px">
+            </div>
+
+            <form method="POST" action="{{ route('password.request') }}">
+                @csrf
+
+                {{-- Email --}}
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value="{{ old('email') }}"
+                        class="form-control @error('email') is-invalid @enderror"
+                        required
+                    >
+                    @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                {{-- Button --}}
+                <button class="btn btn-light w-100">
+                    Request Reset Link
+                </button>
+
+                <div class="text-center mt-3">
+                    <a href="{{ route('login') }}" class="text-decoration-none">
+                        Back to login
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</body>
+</html>

@@ -10,11 +10,11 @@
 <body class="login-page">
 
 <div class="container min-vh-100 d-flex align-items-center justify-content-center">
-    <div class="card shadow-sm" style="width: 420px;">
+    <div class="card glass-card" style="width: 420px;">
         <div class="card-body p-4">
 
             <div class="text-center mb-3">
-                <img src="{{ asset('images/kinich.svg') }}" alt="logo" style="height: 70px">
+                <img src="{{ asset('images/fuxuan.png') }}" alt="logo" style="height: 80px">
             </div>
 
             {{-- Session status --}}
@@ -65,20 +65,24 @@
                 </div>
 
                 {{-- Button --}}
-                <button class="btn btn-success w-100">
+                <button class="btn btn-light w-100">
                     Login
                 </button>
 
                 {{-- Forgot --}}
-                @if (Route::has('password.request'))
-                    <div class="text-center mt-3">
-                        <a href="{{ route('password.request') }}" class="text-success text-decoration-none">
-                            Forgot your password?
-                        </a>
-                    </div>
-                @endif
-            </form>
+                <div class="text-center mt-3">
+                    <a href="{{ route('password.request') }}" class="text-decoration-none">
+                        Forgot your password?
+                    </a>
+                </div>
 
+                {{-- Sign up --}}
+                <div class="text-center mt-3">
+                    <a href="{{ route('register') }}" class="text-decoration-none">
+                        Create an account
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
