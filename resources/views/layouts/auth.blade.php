@@ -22,7 +22,7 @@
 </audio>
 
 <button id="musicToggle" class="music-btn">
-    <i class="fa-solid fa-volume-high"></i>
+    <i class="fa-solid fa-volume-xmark"></i>
 </button>
 
 <div class="container min-vh-100 d-flex align-items-center justify-content-center">
