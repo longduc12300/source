@@ -7,24 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = btn.querySelector('i');
     bgm.volume = 0.3;
 
-    let started = false;
+    let enabled = localStorage.getItem('bgm_enabled') === 'true';
 
-    document.addEventListener('click', () => {
-        if (!started) {
-            bgm.play();
-            started = true;
-            icon.classList.replace('fa-volume-xmark', 'fa-volume-high');
-        }
-    }, { once: true });
+    if (enabled) {
+        bgm.play().catch(() => {});
+    }
+
+    let started = false;
+    document.addEventListener(
+        'click',
+        () => {
+            if (!started && enabled) {
+                bgm.play().catch(() => {});
+                started = true;
+                icon.classList.replace('fa-volume-xmark', 'fa-volume-high');
+            }
+        },
+        { once: true }
+    );
 
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
+
         if (bgm.paused) {
             bgm.play();
             icon.classList.replace('fa-volume-xmark', 'fa-volume-high');
+            localStorage.setItem('bgm_enabled', 'true');
+            enabled = true;
         } else {
             bgm.pause();
             icon.classList.replace('fa-volume-high', 'fa-volume-xmark');
+            localStorage.setItem('bgm_enabled', 'false');
+            enabled = false;
         }
     });
 });
